@@ -8,10 +8,13 @@ def test_home():
     assert response.status_code == 200
 
 
-def test_prediction():
+def test_predict():
 
     data = {
-        "features": [5.1, 3.5, 1.4, 0.2]
+        "sepal_length": 5.1,
+        "sepal_width": 3.5,
+        "petal_length": 1.4,
+        "petal_width": 0.2
     }
 
     response = client.post("/predict", json=data)
